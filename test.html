@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+    </div>
+    <div>
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" accept="image/*">
+    </div>
+    <div>
+        <button onclick="saveData()">Save Data</button>
+        <button onclick="displayData()">Display Data</button>
+    </div>
+    <div id="data"></div>
+    <script>
+        let Person = {};
+
+        // Function to save data to the Person object
+        function saveData() {
+            // Get the input values
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let photo = document.getElementById("photo").files[0];
+
+            // Save the input values to the Person object
+            Person.username = username;
+            Person.password = password;
+            Person.photo = photo;
+
+            alert("Data saved to the Person object!");
+        }
+
+        // Function to display data from the Person object
+        function displayData() {
+            // Get the div element where the data will be displayed
+            let dataDiv = document.getElementById("data");
+
+            // Clear the contents of the div
+            dataDiv.innerHTML = "";
+
+            // Check if the Person object is empty
+            if (Object.keys(Person).length === 0) {
+                dataDiv.innerHTML = "No data to display.";
+            } else {
+                // Display the data from the Person object
+                dataDiv.innerHTML =
+                    `Username: ${Person.username} <br> Password: ${Person.password} <br> Photo: <img src='${URL.createObjectURL(Person.photo)}' alt='User photo'/>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

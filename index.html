@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="welcome">
+        <h1 id="welcome">Welcome </h1>
+    </div>
+
+    <table id="table-data">
+        <tr>
+            <th id="q1">Question</th>
+            <th id="a1">Answer</th>
+            <th id="time">Time</th>
+        </tr>
+        <tr>
+            <!-- <td id="q1">What is the capital of France?</td>
+            <td id="a1">Paris</td>
+            <td id="time">12:30 PM</td> -->
+        </tr>
+    </table>
+
+    <div class="sidebar" id="sidebar">
+        <div class="chat">
+            <button class="btn-chat" id="btn-new"><i class="fa-solid fa-plus"></i>New chat</button>
+        </div>
+        <div class="conv">
+            <hr>
+            <button class="btn blue" id="btn-delete"><i class="fa-solid fa-trash"></i>Clear Conversation</button>
+            <button class="btn blue" id="btn-yes"><i class="fa-solid fa-check"></i>Yes</button>
+            <button class="btn blue" id="btn-no"><i class="fa-solid fa-circle-xmark"></i>No</button>
+            <button class="btn blue" id="change-mode"><i class="fa-solid fa-sun"></i>Change Mode</button>
+            <button class="btn blue" id="my-data"><i class="fa-solid fa-table"></i>My Data</button>
+            <button class="btn blue" id="btn-logout" onclick="logout()"><i
+                    class="fa-solid fa-right-from-bracket"></i>Log
+                out</button>
+        </div>
+    </div>
+
+    <div class="chat-body" id="chat-body">
+        <div class="div1" id="div1">
+            <!-- <div class="question">
+                <p id="question"></p>
+            </div>
+            <hr>
+            <div class="answer">
+                <p id="answer"></p>
+            </div> -->
+        </div>
+        <input type="text" id="input" placeholder="Type something...">
+        <i id="submit" class="fa-solid fa-paper-plane"></i>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
